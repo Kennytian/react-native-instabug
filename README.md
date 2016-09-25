@@ -17,10 +17,10 @@ include ':app'
 Edit android/app/build.gradle to look like this:
 ```diff
 dependencies {
-    compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:23.0.1"
-    compile "com.facebook.react:react-native:+"  // From node_modules
-  + compile project(':react-native-instabug')
+  compile fileTree(dir: "libs", include: ["*.jar"])
+  compile "com.android.support:appcompat-v7:23.0.1"
+  compile "com.facebook.react:react-native:+"  // From node_modules
++ compile project(':react-native-instabug')
 }
 ```
 
