@@ -25,9 +25,7 @@ public class InstabugPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<NativeModule>();
-
         modules.add(new InstabugModule(reactContext, this.mToken, this.mApplication));
-
         return modules;
     }
 

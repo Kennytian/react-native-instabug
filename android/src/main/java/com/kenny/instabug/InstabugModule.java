@@ -5,10 +5,12 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
 import android.app.Application;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.facebook.react.bridge.ReactMethod;
 import com.instabug.library.Feature;
 import com.instabug.library.IBGColorTheme;
+import com.instabug.library.IBGInvocationEvent;
 import com.instabug.library.IBGInvocationMode;
 import com.instabug.library.Instabug;
 
@@ -58,7 +60,7 @@ public class InstabugModule extends ReactContextBaseJavaModule {
     public void shakingThresholdAndroid(String value) {
         if (!TextUtils.isEmpty(value)) {
             try {
-                this.mBuilder.setShakingThreshold(Float.parseFloat(value));
+                this.mBuilder.setShakingThreshold(Float.parseFloat(value + 'f'));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -76,7 +78,6 @@ public class InstabugModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void report(String value) {
-        Log.d(TAG, value);
         switch (value) {
             case "bug":
                 this.mBuilder.setDefaultInvocationMode(IBGInvocationMode.IBGInvocationModeBugReporter);
@@ -88,7 +89,7 @@ public class InstabugModule extends ReactContextBaseJavaModule {
                 this.mBuilder.setDefaultInvocationMode(IBGInvocationMode.IBGInvocationModeNA);
                 break;
         }
-        this.mBuilder.build();
+        this.mBuilder.setInvocationEvent(IBGInvocationEvent.IBGInvocationEventShake).build();
     }
 
     // default value is true

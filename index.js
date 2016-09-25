@@ -1,13 +1,23 @@
 'use strict';
 
-import { NativeModules, Platform } from 'react-native';
+import {NativeModules} from 'react-native';
 
-let { Instabug } = NativeModules;
+let {Instabug} = NativeModules;
 
-export function reportFeedback() {
-	Instabug.report('feedback');
-}
+module.exports = {
+	shakingThresholdAndroid: function (value) {
+		Instabug.shakingThresholdAndroid(value);
+	},
 
-export function reportBug() {
-	NativeModules.Instabug.report('bug');
-}
+	colorTheme: function (value) {
+		Instabug.colorTheme(value);
+	},
+
+	reportFeedback: function () {
+		Instabug.report('feedback');
+	},
+
+	reportBug: function () {
+		Instabug.report('bug');
+	}
+};
