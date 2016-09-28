@@ -17,3 +17,4 @@ script:
   - react-native init InstagbugDemo
   - cd InstagbugDemo
   - npm install react-native-instabug --save
+  - react-native link
