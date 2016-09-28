@@ -24,4 +24,16 @@ module.exports = {
   showIntroMessage: function () {
     Instabug.showIntroMessage();
   },
+
+  setUserEmail: function (userEmail) {
+    Instabug.setUserEmail(userEmail);
+  },
+
+  setUsername: function (username) {
+    Instabug.setUsername(username);
+  },
+
+  setUserData: function (userData) {
+    Instabug.setUserData(userData);
+  },
 };

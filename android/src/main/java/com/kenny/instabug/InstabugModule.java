@@ -65,6 +65,33 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         }
     }
 
+    @ReactMethod
+    public void setUserEmail(String userEmail) {
+        try {
+            mInstabug.setUserEmail(userEmail);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @ReactMethod
+    public void setUsername(String username) {
+        try {
+            mInstabug.setUsername(username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @ReactMethod
+    public void setUserData(String userData) {
+        try {
+            mInstabug.setUserData(userData);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // default value is true
     /*@ReactMethod
     public void commentRequired(boolean value) {
