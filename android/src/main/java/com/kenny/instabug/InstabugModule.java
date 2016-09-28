@@ -15,17 +15,10 @@ import com.instabug.library.IBGInvocationMode;
 import com.instabug.library.Instabug;
 
 public class InstabugModule extends ReactContextBaseJavaModule {
-
-    private final static String TAG = InstabugModule.class.getSimpleName();
-
-    private String mToken;
-    private Application mApplication;
-
     // Reference to builder
     private Instabug.Builder mBuilder;
 
-    private Application mApplication;
-    private String mToken;
+    private Instabug mInstabug;
 
     public InstabugModule(ReactApplicationContext reactContext, Instabug instabug) {
         super(reactContext);
@@ -33,7 +26,7 @@ public class InstabugModule extends ReactContextBaseJavaModule {
     }
 
     public String getName() {
-        return TAG;
+        return "Instabug";
     }
 
     /*@ReactMethod
