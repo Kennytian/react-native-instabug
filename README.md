@@ -1,5 +1,7 @@
 ## Instabug for React Native
 
+[The Simplest In-App Feedback and Bug Reportng for Mobile Apps! ](https://instabug.com/developers)
+
 ## Getting Started
 
 `npm install --save react-native-instabug`
