@@ -19,8 +19,6 @@ public class InstabugModule extends ReactContextBaseJavaModule {
     private Instabug.Builder mBuilder;
 
     private Instabug mInstabug;
-    private Application mApplication;
-    private String mToken;
 
     public InstabugModule(ReactApplicationContext reactContext, Instabug instabug) {
         super(reactContext);
