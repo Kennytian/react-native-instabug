@@ -9,10 +9,10 @@ import com.facebook.react.bridge.ReactMethod;
 import com.instabug.library.IBGInvocationMode;
 import com.instabug.library.Instabug;
 
-public class InstabugModule extends ReactContextBaseJavaModule {
-    // Reference to builder
-    private Instabug.Builder mBuilder;
+import java.util.Locale;
 
+
+public class InstabugModule extends ReactContextBaseJavaModule {
     private Instabug mInstabug;
 
     public InstabugModule(ReactApplicationContext reactContext, Instabug instabug) {
@@ -22,6 +22,57 @@ public class InstabugModule extends ReactContextBaseJavaModule {
 
     public String getName() {
         return "Instabug";
+    }
+
+    /**
+     * Adds tag(s) to issues before sending them
+     *
+     * @param tags
+     */
+    @ReactMethod
+    public void addTags(String tags) {
+        try {
+            String[] result = tags.split(",");
+            mInstabug.resetTags(); //clear last commit tags
+            mInstabug.addTags(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Change Locale of Instabug UI elements(defaults to English)
+     *
+     * @param languageTag
+     */
+    @ReactMethod
+    public void changeLocale(String languageTag) {
+        try {
+            switch (languageTag) {
+                case "CHINA":
+                case "CHINESE":
+                case "PRC":
+                case "SIMPLIFIED_CHINESE":
+                    mInstabug.changeLocale(Locale.CHINESE);
+                    break;
+                case "TAIWAN":
+                case "TRADITIONAL_CHINESE":
+                    mInstabug.changeLocale(Locale.TAIWAN);
+                    break;
+                case "ENGLISH":
+                    mInstabug.changeLocale(Locale.ENGLISH);
+                    break;
+                case "UK":
+                    mInstabug.changeLocale(Locale.UK);
+                    break;
+                case "US":
+                    mInstabug.changeLocale(Locale.US);
+                    break;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @ReactMethod
@@ -38,16 +89,16 @@ public class InstabugModule extends ReactContextBaseJavaModule {
 
     /**
      * The file at filePath will be uploaded along upcoming reports with the name fileNameWithExtension
+     *
      * @param fileUri
      * @param fileNameWithExtension
      */
     @ReactMethod
-    public void setFileAttachment(String fileUri, String fileNameWithExtension){
-        try{
+    public void setFileAttachment(String fileUri, String fileNameWithExtension) {
+        try {
             Uri uri = Uri.parse(fileUri);
             mInstabug.setFileAttachment(uri, fileNameWithExtension);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -55,6 +106,7 @@ public class InstabugModule extends ReactContextBaseJavaModule {
     /**
      * If your app already acquires the user's email address and you provide it to this method,
      * Instabug will pre-fill the user email in reports.
+     *
      * @param userEmail
      */
     @ReactMethod
@@ -68,6 +120,7 @@ public class InstabugModule extends ReactContextBaseJavaModule {
 
     /**
      * Sets the user name that is used in the dashboard's contacts.
+     *
      * @param username
      */
     @ReactMethod
@@ -81,6 +134,7 @@ public class InstabugModule extends ReactContextBaseJavaModule {
 
     /**
      * Adds specific user data that you need to be added to the reports
+     *
      * @param userData
      */
     @ReactMethod
