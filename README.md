@@ -53,18 +53,19 @@ to be continued
 
 
 ## Usage
-<pre><code>
 
+To see all available function take a look at [index.android.js](https://github.com/Kennytian/react-native-instabug/blob/master/example/index.android.js#L41)
+
+```js
 _testShowIntroMessage(){
-	Instabug.showIntroMessage();
+  Instabug.showIntroMessage();
 }
 
 _testInstabug() {
-	Instabug.setUserEmail('your@gmail.com');
-	Instabug.setUserData('This is your committed user data');
-	Instabug.setUsername("Your user name");
-	Instabug.addTags(['react-native','bug','feedback','instabug']);
-	Instabug.reportBug();
+  Instabug.setUserEmail('your@gmail.com');
+  Instabug.setUserData('This is your committed user data');
+  Instabug.setUsername("Your user name");
+  Instabug.addTags(['react-native','bug','feedback','instabug']);
+  Instabug.reportBug();
 }
-
-</code></pre>
+```
