@@ -47,6 +47,7 @@ _testInstabug() {
 	Instabug.setUserData('This is your committed user data');
 	Instabug.setUsername("Your user name");
 	Instabug.addTags(['react-native','bug','feedback','instabug']);
+	Instabug.changeLocale('CHINESE');
 	Instabug.reportBug();
 }
 }
