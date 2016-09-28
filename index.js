@@ -5,19 +5,19 @@ import {NativeModules} from 'react-native';
 let {Instabug} = NativeModules;
 
 module.exports = {
-	//shakingThresholdAndroid: function (value) {
-	//	Instabug.shakingThresholdAndroid(value);
-	//},
+  //shakingThresholdAndroid: function (value) {
+  //  Instabug.shakingThresholdAndroid(value);
+  //},
 
-	//colorTheme: function (value) {
-	//	Instabug.colorTheme(value);
-	//},
+  //colorTheme: function (value) {
+  //  Instabug.colorTheme(value);
+  //},
 
-	reportFeedback: function () {
-		Instabug.report('feedback');
-	},
+  reportFeedback: function () {
+    Instabug.report('feedback');
+  },
 
-	reportBug: function () {
-		Instabug.report('bug');
-	}
+  reportBug: function () {
+    Instabug.report('bug');
+  },
 };
