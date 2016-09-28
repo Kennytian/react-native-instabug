@@ -1,6 +1,6 @@
 {
   "name": "react-native-instabug",
-  "version": "0.0.4",
+  "version": "0.0.9",
   "description": "This is a user feedback component",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "keywords": [
     "react-native",
     "bug",
+    "feedback",
     "instabug"
   ],
   "author": "Kenny Tian",

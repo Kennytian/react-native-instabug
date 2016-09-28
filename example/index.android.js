@@ -36,9 +36,9 @@ class MyProject extends Component {
 	}
 
 	_testInstabug() {
-		console.debug(Instabug);
-		Instabug.shakingThresholdAndroid(0.8);
-		Instabug.colorTheme('light');
+		//console.debug(Instabug);
+		//Instabug.shakingThresholdAndroid(0.8);
+		//Instabug.colorTheme('light');
 		Instabug.reportBug();
 	}
 }
