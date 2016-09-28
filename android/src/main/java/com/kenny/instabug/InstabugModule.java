@@ -4,18 +4,21 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
 import android.app.Application;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.facebook.react.bridge.ReactMethod;
+import com.instabug.library.Feature;
 import com.instabug.library.IBGColorTheme;
+import com.instabug.library.IBGInvocationEvent;
 import com.instabug.library.IBGInvocationMode;
 import com.instabug.library.Instabug;
 
 public class InstabugModule extends ReactContextBaseJavaModule {
     // Reference to builder
-    private Instabug mInstabug;
     private Instabug.Builder mBuilder;
 
+    private Instabug mInstabug;
     private Application mApplication;
     private String mToken;
 
