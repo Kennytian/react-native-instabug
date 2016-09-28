@@ -2,22 +2,22 @@
 
 import {NativeModules} from 'react-native';
 
-let {Instabug} = NativeModules;
+let {InstabugModule} = NativeModules;
 
 module.exports = {
 	//shakingThresholdAndroid: function (value) {
-	//	Instabug.shakingThresholdAndroid(value);
+	//	InstabugModule.shakingThresholdAndroid(value);
 	//},
 
 	//colorTheme: function (value) {
-	//	Instabug.colorTheme(value);
+	//	InstabugModule.colorTheme(value);
 	//},
 
 	reportFeedback: function () {
-		Instabug.report('feedback');
+		InstabugModule.report('feedback');
 	},
 
 	reportBug: function () {
-		Instabug.report('bug');
+		InstabugModule.report('bug');
 	}
 };

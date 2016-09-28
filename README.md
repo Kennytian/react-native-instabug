@@ -1,10 +1,18 @@
 ## Instabug for React Native
 
-#### **!!! CAN NOT WORK NOW !!!**
+## Getting Started
 
-### Android 50% completed
+`npm install --save react-native-instabug`
 
-#### Manually Android
+![Android Demo](http://ww4.sinaimg.cn/mw690/77c29b23jw1f89gh1t08dj20f40nadgt.jpg)
+
+## Android Setup
+
+#### Auto Link
+
+`react native link react-native-instabug`
+
+#### Manually
 Edit android/settings.gradle to look like this:
 
 ```diff
@@ -31,16 +39,17 @@ only RN 0.29+ Edit your MainApplication.java (deep in android/app/src/main/java/
 }
 ```
 
-#### Usage
+
+## iOS TODO
+to be continued
+
+
+## Usage
 ```diff
 + import Instabug from 'react-native-instabug';
 
 ...
 
-+ Instabug.shakingThresholdAndroid(0.8);
-+ Instabug.colorTheme('dark');
 + Instabug.reportBug();
++ // or Instabug.reportFeedback();
 ```
-
-### iOS TODO
-to be continued
