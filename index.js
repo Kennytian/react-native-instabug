@@ -5,35 +5,31 @@ import {NativeModules} from 'react-native';
 let {Instabug} = NativeModules;
 
 module.exports = {
-  //shakingThresholdAndroid: function (value) {
-  //  Instabug.shakingThresholdAndroid(value);
-  //},
+	reportFeedback: function () {
+		Instabug.report('feedback');
+	},
 
-  //colorTheme: function (value) {
-  //  Instabug.colorTheme(value);
-  //},
+	reportBug: function () {
+		Instabug.report('bug');
+	},
 
-  reportFeedback: function () {
-    Instabug.report('feedback');
-  },
+	setFileAttachment: function (fileUri, fileNameWithExtension) {
+		Instabug.setFileAttachment(fileUri, fileNameWithExtension);
+	},
 
-  reportBug: function () {
-    Instabug.report('bug');
-  },
+	setUserEmail: function (userEmail) {
+		Instabug.setUserEmail(userEmail);
+	},
 
-  showIntroMessage: function () {
-    Instabug.showIntroMessage();
-  },
+	setUsername: function (username) {
+		Instabug.setUsername(username);
+	},
 
-  setUserEmail: function (userEmail) {
-    Instabug.setUserEmail(userEmail);
-  },
+	setUserData: function (userData) {
+		Instabug.setUserData(userData);
+	},
 
-  setUsername: function (username) {
-    Instabug.setUsername(username);
-  },
-
-  setUserData: function (userData) {
-    Instabug.setUserData(userData);
-  },
+	showIntroMessage: function () {
+		Instabug.showIntroMessage();
+	},
 };

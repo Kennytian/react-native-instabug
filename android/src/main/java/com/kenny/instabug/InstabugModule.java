@@ -1,16 +1,11 @@
 package com.kenny.instabug;
 
+import android.net.Uri;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
-import android.app.Application;
-import android.text.TextUtils;
-import android.util.Log;
-
 import com.facebook.react.bridge.ReactMethod;
-import com.instabug.library.Feature;
-import com.instabug.library.IBGColorTheme;
-import com.instabug.library.IBGInvocationEvent;
 import com.instabug.library.IBGInvocationMode;
 import com.instabug.library.Instabug;
 
@@ -29,21 +24,6 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         return "Instabug";
     }
 
-    /*@ReactMethod
-    public void colorTheme(String value) {
-        switch (value) {
-            case "dark":
-                this.mBuilder.setColorTheme(IBGColorTheme.IBGColorThemeDark);
-                break;
-            case "light":
-                this.mBuilder.setColorTheme(IBGColorTheme.IBGColorThemeLight);
-                break;
-            default:
-                break;
-        }
-    }*/
-
-
     @ReactMethod
     public void report(String value) {
         IBGInvocationMode mode = IBGInvocationMode.IBGInvocationModeNA;
@@ -56,15 +36,27 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         mInstabug.invoke(mode);
     }
 
+    /**
+     * The file at filePath will be uploaded along upcoming reports with the name fileNameWithExtension
+     * @param fileUri
+     * @param fileNameWithExtension
+     */
     @ReactMethod
-    public void showIntroMessage() {
-        try {
-            mInstabug.showIntroMessage();
-        } catch (Exception e) {
+    public void setFileAttachment(String fileUri, String fileNameWithExtension){
+        try{
+            Uri uri = Uri.parse(fileUri);
+            mInstabug.setFileAttachment(uri, fileNameWithExtension);
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
     }
 
+    /**
+     * If your app already acquires the user's email address and you provide it to this method,
+     * Instabug will pre-fill the user email in reports.
+     * @param userEmail
+     */
     @ReactMethod
     public void setUserEmail(String userEmail) {
         try {
@@ -74,6 +66,10 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         }
     }
 
+    /**
+     * Sets the user name that is used in the dashboard's contacts.
+     * @param username
+     */
     @ReactMethod
     public void setUsername(String username) {
         try {
@@ -83,6 +79,10 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         }
     }
 
+    /**
+     * Adds specific user data that you need to be added to the reports
+     * @param userData
+     */
     @ReactMethod
     public void setUserData(String userData) {
         try {
@@ -92,35 +92,17 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         }
     }
 
-    // default value is true
-    /*@ReactMethod
-    public void commentRequired(boolean value) {
-        this.mBuilder.setCommentFieldRequired(value);
-    }*/
-
-    /*@ReactMethod
-    public void shakingThresholdAndroid(String value) {
-        if (!TextUtils.isEmpty(value)) {
-            try {
-                this.mBuilder.setShakingThreshold(Float.parseFloat(value + "f"));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }*/
-
-    /*@ReactMethod
-    public void enableIntroDialog(boolean value) {
+    /**
+     * Call this method to display the discovery dialog explaining the shake gesture or the two
+     * finger swipe gesture, if you've enabled it.
+     * i.e: This method is automatically called on first run of the application
+     */
+    @ReactMethod
+    public void showIntroMessage() {
         try {
-            this.mBuilder.setShouldShowIntroDialog(value);
+            mInstabug.showIntroMessage();
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
-
-    // default value is true
-    /*@ReactMethod
-    public void setAddLogToReports(boolean value) {
-        this.mBuilder.setInstabugLogState(value ? Feature.State.ENABLED : Feature.State.DISABLED);
-    }*/
+    }
 }

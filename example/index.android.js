@@ -28,6 +28,9 @@ class MyProject extends Component {
 					Double tap R on your keyboard to reload,{'\n'}
 					Shake or press menu button for dev menu
 				</Text>
+				<TouchableOpacity onPress={()=>this._testShowIntroMessage()}>
+					<Text style={styles.welcome}>Show intro message</Text>
+				</TouchableOpacity>
 				<TouchableOpacity onPress={()=>this._testInstabug()}>
 					<Text style={styles.welcome}>Click show me</Text>
 				</TouchableOpacity>
@@ -35,9 +38,16 @@ class MyProject extends Component {
 		);
 	}
 
-	_testInstabug() {
-		Instabug.reportBug();
-	}
+_testShowIntroMessage(){
+	Instabug.showIntroMessage();
+}
+
+_testInstabug() {
+	Instabug.setUserEmail('your@gmail.com');
+	Instabug.setUserData('This is your committed user data');
+	Instabug.setUsername("Your user name");
+	Instabug.reportBug();
+}
 }
 
 const styles = StyleSheet.create({

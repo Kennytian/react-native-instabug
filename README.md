@@ -53,11 +53,17 @@ to be continued
 
 
 ## Usage
-```diff
-+ import Instabug from 'react-native-instabug';
+<pre><code>
 
-...
+_testShowIntroMessage(){
+	Instabug.showIntroMessage();
+}
 
-+ Instabug.reportBug();
-+ // or Instabug.reportFeedback();
-```
+_testInstabug() {
+	Instabug.setUserEmail('your@gmail.com');
+	Instabug.setUserData('This is your committed user data');
+	Instabug.setUsername("Your user name");
+	Instabug.reportBug();
+}
+
+</code></pre>
