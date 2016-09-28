@@ -20,4 +20,8 @@ module.exports = {
   reportBug: function () {
     Instabug.report('bug');
   },
+
+  showIntroMessage: function () {
+    Instabug.showIntroMessage();
+  },
 };

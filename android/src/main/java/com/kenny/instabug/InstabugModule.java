@@ -56,6 +56,15 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         mInstabug.invoke(mode);
     }
 
+    @ReactMethod
+    public void showIntroMessage() {
+        try {
+            mInstabug.showIntroMessage();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     // default value is true
     /*@ReactMethod
     public void commentRequired(boolean value) {
