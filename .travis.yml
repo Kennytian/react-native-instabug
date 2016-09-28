@@ -1,4 +1,16 @@
 language: node_js
+
+sudo: true
+
 node_js:
-  - "4"
-  - "6"
+  - "4.5.0"
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email: false
+
+script:
+  - npm install react-native-instabug --save
