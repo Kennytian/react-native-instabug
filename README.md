@@ -42,6 +42,8 @@ dependencies {
 
 only RN 0.29+ Edit your MainApplication.java (deep in android/app/src/main/java/...) to look like this (note two places to edit):
 ```diff
++ import com.kenny.instabug.InstabugPackage;
+...
   new MainReactPackage(),
 + new InstabugPackage("YOUR_TOKEN_KEY", MainApplication.this)
 }
