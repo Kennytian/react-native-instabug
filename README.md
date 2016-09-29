@@ -65,7 +65,7 @@ _testInstabug() {
   Instabug.setUserEmail('your@gmail.com');
   Instabug.setUserData('This is your committed user data');
   Instabug.setUsername("Your user name");
-  Instabug.addTags(['react-native','bug','feedback','instabug']);
+  Instabug.addTags('react-native,bug,feedback,instabug');
   Instabug.reportBug();
 }
 ```
