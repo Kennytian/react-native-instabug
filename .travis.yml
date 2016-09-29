@@ -7,7 +7,7 @@ node_js:
 
 cache:
   directories:
-    - InstagbugDemo
+    - node_modules
 
 notifications:
   email: false
