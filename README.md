@@ -1,4 +1,4 @@
-## Instabug for React Native
+##React Native plugin for the Instabug service
 
 [![Build Status](https://travis-ci.org/Kennytian/react-native-instabug.svg?branch=master)](https://travis-ci.org/Kennytian/react-native-instabug)
 [![npm version](http://img.shields.io/npm/v/react-native-instabug.svg?style=flat-square)](https://npmjs.org/package/react-native-instabug "View this project on npm")
