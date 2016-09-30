@@ -20,7 +20,7 @@
 
 #### Auto Link
 
-`react native link react-native-instabug`
+`react-native link react-native-instabug`
 
 #### Manually
 Edit android/settings.gradle to look like this:
@@ -47,7 +47,7 @@ only RN 0.29+ Edit your MainApplication.java (deep in android/app/src/main/java/
 + import com.kenny.instabug.InstabugPackage;
 ...
   new MainReactPackage(),
-+ new InstabugPackage("YOUR_TOKEN_KEY", MainApplication.this)
++ new InstabugPackage("your_app_token_here", MainApplication.this)
 }
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "react-native-instabug",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "React Native plugin for the Instabug service",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/Kennytian/react-native-instabug#readme",
   "rnpm": {
     "android": {
-      "packageInstance": "new InstabugPackage(${androidApplicationToken}, getApplicationContext())"
+      "packageInstance": "new InstabugPackage(${androidApplicationToken}, MainApplication.this)"
     },
     "params": [
       {
@@ -32,6 +32,9 @@
         "name": "androidApplicationToken",
         "message": "What is your Instabug application token for Android (hit <ENTER> to ignore)"
       }
-    ]
+    ],
+    "commands": {
+      "postlink": "node node_modules/react-native-code-push/scripts/postlink/run"
+    }
   }
 }
