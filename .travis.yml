@@ -20,6 +20,7 @@ script:
   - cd InstagbugDemo
   - npm install react-native-instabug --save
   - react-native link
+  - 0123456789
 
 after_script:
   - npm uninstall react-native-instabug --save
