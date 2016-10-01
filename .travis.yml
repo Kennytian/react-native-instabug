@@ -19,7 +19,7 @@ notifications:
 script:
   - cd InstagbugDemo
   - npm install react-native-instabug --save
-  - react-native link && fake_token_key
+  # - react-native link
 
 after_script:
   - npm uninstall react-native-instabug --save
