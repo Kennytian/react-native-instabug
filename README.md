@@ -53,8 +53,10 @@ only RN 0.29+ Edit your MainApplication.java (deep in android/app/src/main/java/
 
 
 ## iOS TODO
-to be continued
-
+### !!! iOS code 10% done, coming soon !!!
+```diff
++ Welcome iOS developer join, write this component together!
+```
 
 ## Usage
 
