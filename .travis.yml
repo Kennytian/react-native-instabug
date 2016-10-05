@@ -7,11 +7,12 @@ node_js:
 
 cache:
   directories:
+    #- node_modules
     - InstagbugDemo
 
 before_install:
   - npm install -g react-native-cli
-  #- rm -rf InstagbugDemo
+  - rm -rf InstagbugDemo
 
 notifications:
   email: false
