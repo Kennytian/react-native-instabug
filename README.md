@@ -10,19 +10,18 @@
 
 [The Simplest In-App Feedback and Bug Reportng for Mobile Apps! ](https://instabug.com/developers)
 
-## Getting Started
+![Android Demo](http://ww4.sinaimg.cn/mw690/77c29b23jw1f89gh1t08dj20f40nadgt.jpg)
+
+### Getting Started
 
 `npm install --save react-native-instabug`
 
-![Android Demo](http://ww4.sinaimg.cn/mw690/77c29b23jw1f89gh1t08dj20f40nadgt.jpg)
-
-## Android Setup
-
-#### Auto Link
+### Mostly automatic installation
 
 `react-native link react-native-instabug`
 
-#### Manually
+### Manual installation
+#### Android
 Edit android/settings.gradle to look like this:
 
 ```diff
@@ -51,19 +50,22 @@ only RN 0.29+ Edit your MainApplication.java (deep in android/app/src/main/java/
 }
 ```
 
-
-## iOS TODO
-### !!! iOS code 10% done, coming soon !!!
+#### iOS
 ```diff
-+ Welcome iOS developer join, write this component together!
+- Welcome iOS developer join, write this component together!
 ```
 
-## Usage
+1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
+2. Go to `node_modules` ➜ `react-native-instabug` and add `ios/RCTInstabug.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libRCTInstabug.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+4. Run your project (`Cmd+R`)<
+
+### Usage
 
 To see all available function take a look at [index.android.js](https://github.com/Kennytian/react-native-instabug/blob/master/example/index.android.js#L41)
 
 ```js
-_testShowIntroMessage(){
+_testShowIntroMessage() {
   Instabug.showIntroMessage();
 }
 

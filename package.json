@@ -1,6 +1,6 @@
 {
   "name": "react-native-instabug",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "React Native plugin for the Instabug service",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,22 @@
     "feedback",
     "instabug"
   ],
-  "author": "Kenny Tian",
+  "author": {
+    "name": "Kenny Tian",
+    "url": "https://github.com/Kennytian",
+    "email": "kenny_tian@outlook.com"
+  },
+  "contributors": [
+    {
+      "name": "张艳",
+      "url": "https://github.com/emmaplus",
+      "email": "zy_sunday@163.com"
+    },
+    {
+      "name": "Prithvi Sharma",
+      "url": "https://github.com/prithsharma"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Kennytian/react-native-instabug/issues"
@@ -38,7 +53,7 @@
     }
   },
   "peerDependencies": {
-    "react-native":"^0.29.0",
-    "react-native-windows":"^0.29.0"
+    "react-native": "^0.29.0",
+    "react-native-windows": "^0.29.0"
   }
 }

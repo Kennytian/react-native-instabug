@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
 	AppRegistry,
 	StyleSheet,
@@ -27,28 +27,28 @@ class MyProject extends Component {
 				<Text style={styles.instructions}>
 					Shake or press menu button for dev menu
 				</Text>
-				<TouchableOpacity onPress={()=>this._testShowIntroMessage()}>
+				<TouchableOpacity onPress={() => this._testShowIntroMessage()}>
 					<Text style={styles.welcome}>Show intro message</Text>
 				</TouchableOpacity>
-				<TouchableOpacity onPress={()=>this._testInstabug()}>
+				<TouchableOpacity onPress={() => this._testInstabug()}>
 					<Text style={styles.welcome}>Click show me</Text>
 				</TouchableOpacity>
 			</View>
 		);
 	}
 
-_testShowIntroMessage(){
-	//Instabug.showIntroMessage();
-}
+	_testShowIntroMessage() {
+		//Instabug.showIntroMessage();
+	}
 
-_testInstabug() {
-	//Instabug.setUserEmail('your@gmail.com');
-	//Instabug.setUserData('This is your committed user data');
-	//Instabug.setUsername('Your user name');
-	//Instabug.addTags('react-native,bug,feedback,instabug');
-	//Instabug.changeLocale('CHINESE');
-	//Instabug.reportBug();
-}
+	_testInstabug() {
+		//Instabug.setUserEmail('your@gmail.com');
+		//Instabug.setUserData('This is your committed user data');
+		//Instabug.setUsername('Your user name');
+		//Instabug.addTags('react-native,bug,feedback,instabug');
+		//Instabug.changeLocale('CHINESE');
+		//Instabug.reportBug();
+	}
 }
 
 const styles = StyleSheet.create({
