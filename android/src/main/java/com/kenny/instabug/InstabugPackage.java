@@ -20,15 +20,6 @@ public class InstabugPackage implements ReactPackage {
     private Application mApplication;
 
     private Instabug mInstagbug;
-    private Instabug.Builder mBuilder;
-
-    public InstabugPackage(Instabug instabug) {
-        this.mInstagbug = instabug;
-    }
-
-    public InstabugPackage(Instabug.Builder builder) {
-        this.mBuilder = builder;
-    }
 
     public InstabugPackage(String token, Application application) {
         this.mToken = token;
@@ -49,8 +40,6 @@ public class InstabugPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<NativeModule>();
-        //modules.add(new InstabugModule(reactContext, this.mToken, this.mApplication));
-        //modules.add(new InstabugModule(reactContext, this.mBuilder));
         modules.add(new InstabugModule(reactContext, this.mInstagbug));
         return modules;
     }

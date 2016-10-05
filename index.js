@@ -30,7 +30,7 @@ module.exports = {
 	 * @param languageTag
 	 */
 	changeLocale: function (languageTag) {
-		Instabug.changeLocale(tags);
+		Instabug.changeLocale(languageTag);
 	},
 
 	/**

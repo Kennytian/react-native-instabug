@@ -1,7 +1,7 @@
 {
   "name": "react-native-instabug",
-  "version": "0.2.5",
-  "description": "React Native plugin for the Instabug service",
+  "version": "0.2.6",
+  "description": "React Native plugin for integrating the Instabug SDK",
   "main": "index.js",
   "scripts": {
     "test": "make test"
@@ -14,7 +14,9 @@
     "react-native",
     "bug",
     "feedback",
-    "instabug"
+    "reporting",
+    "instabug",
+    "sdk"
   ],
   "author": {
     "name": "Kenny Tian",

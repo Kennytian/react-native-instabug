@@ -10,7 +10,7 @@
 
 [The Simplest In-App Feedback and Bug Reportng for Mobile Apps! ](https://instabug.com/developers)
 
-![Android Demo](http://ww4.sinaimg.cn/mw690/77c29b23jw1f89gh1t08dj20f40nadgt.jpg)
+![Android Demo](http://ww4.sinaimg.cn/large/77c29b23gw1f8hqfc2iitj20tk19o77n.jpg)
 
 ### Getting Started
 
