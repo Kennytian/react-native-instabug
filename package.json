@@ -1,6 +1,6 @@
 {
   "name": "react-native-instabug",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "React Native plugin for the Instabug service",
   "main": "index.js",
   "scripts": {
@@ -51,8 +51,5 @@
     "commands": {
       "postlink": "node node_modules/react-native-code-push/scripts/postlink/run"
     }
-  },
-  "peerDependencies": {
-    "react-native": "^0.29.0"
   }
 }
