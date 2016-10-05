@@ -48,6 +48,7 @@ class MyProject extends Component {
 		Instabug.setUsername('Your user name');
 		Instabug.addTags('react-native,bug,feedback,instabug');
 		Instabug.changeLocale('CHINESE');
+		Instabug.changeInvocationEvent('Shake');
 		Instabug.reportBug();
 	}
 }

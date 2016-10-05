@@ -8,7 +8,6 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.instabug.library.IBGColorTheme;
-import com.instabug.library.IBGInvocationEvent;
 import com.instabug.library.Instabug;
 
 import java.util.ArrayList;
@@ -29,12 +28,9 @@ public class InstabugPackage implements ReactPackage {
                 .setDebugEnabled(true)
                 .setEmailFieldRequired(false)
                 .setFloatingButtonOffsetFromTop(400)
-                .setColorTheme(IBGColorTheme.IBGColorThemeLight)
+                .setColorTheme(IBGColorTheme.IBGColorThemeDark)
                 .setShouldShowIntroDialog(false)
-                .setInvocationEvent(IBGInvocationEvent.IBGInvocationEventShake)
-                //.setDefaultInvocationMode(IBGInvocationMode.IBGInvocationModeBugReporter)
                 .build();
-
     }
 
     @Override

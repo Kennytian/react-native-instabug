@@ -6,6 +6,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
 import com.facebook.react.bridge.ReactMethod;
+import com.instabug.library.IBGInvocationEvent;
 import com.instabug.library.IBGInvocationMode;
 import com.instabug.library.Instabug;
 
@@ -35,6 +36,37 @@ public class InstabugModule extends ReactContextBaseJavaModule {
             String[] result = tags.split(",");
             mInstabug.resetTags(); //clear last commit tags
             mInstabug.addTags(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Changes the event used to invoke Instabug SDK
+     *
+     * @param eventTag
+     */
+    @ReactMethod
+    public void changeInvocationEvent(String eventTag) {
+        try {
+            switch (eventTag) {
+                case "None":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventNone);
+                    break;
+                case "TwoFingersSwipeLeft":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventTwoFingersSwipeLeft);
+                    break;
+                case "FloatingButton":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventFloatingButton);
+                    break;
+                case "Shake":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventShake);
+                    break;
+                case "ScreenshotGesture":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationScreenshotGesture);
+                    break;
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,6 +106,7 @@ public class InstabugModule extends ReactContextBaseJavaModule {
             e.printStackTrace();
         }
     }
+
 
     @ReactMethod
     public void report(String value) {

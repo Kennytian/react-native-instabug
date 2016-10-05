@@ -10,7 +10,7 @@
 
 [The Simplest In-App Feedback and Bug Reportng for Mobile Apps! ](https://instabug.com/developers)
 
-![Android Demo](http://ww4.sinaimg.cn/large/77c29b23gw1f8hqfc2iitj20tk19o77n.jpg)
+![Android Demo](http://ww2.sinaimg.cn/mw690/77c29b23gw1f8hqnty8m1j20hu0qk404.jpg)
 
 ### Getting Started
 
@@ -74,6 +74,7 @@ _testInstabug() {
   Instabug.setUserData('This is your committed user data');
   Instabug.setUsername('Your user name');
   Instabug.addTags('react-native,bug,feedback,instabug');
+  Instabug.changeInvocationEvent('Shake');
   Instabug.reportBug();
 }
 ```

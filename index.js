@@ -22,6 +22,20 @@ module.exports = {
 	},
 
 	/**
+	 * None -> IBGInvocationEventNone
+	 * TwoFingersSwipeLeft -> IBGInvocationEventTwoFingersSwipeLeft
+	 * FloatingButton -> IBGInvocationEventFloatingButton
+	 * Shake -> IBGInvocationEventShake
+	 * ScreenshotGesture -> IBGInvocationScreenshotGesture
+	 *
+	 Changes the event used to invoke Instabug SDK
+	 * @param eventTag
+	 */
+	changeInvocationEvent: function (eventTag) {
+		Instabug.changeInvocationEvent(eventTag);
+	},
+
+	/**
 	 [CHINA/CHINESE/PRC/SIMPLIFIED_CHINESE -> CHINESE]
 	 [TAIWAN/TRADITIONAL_CHINESE -> TAIWAN]
 	 [ENGLISH -> ENGLISH]
