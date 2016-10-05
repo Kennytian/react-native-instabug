@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RCTBridgeModule.h"
 
-@interface RCTInstabug : NSObject
+@interface RCTInstabug : NSObject<RCTBridgeModule>
 
 @end
