@@ -115,6 +115,8 @@ public class InstabugModule extends ReactContextBaseJavaModule {
             mode = IBGInvocationMode.IBGInvocationModeBugReporter;
         } else if (value.equals("feedback")) {
             mode = IBGInvocationMode.IBGInvocationModeFeedbackSender;
+        } else {
+            mode = null;
         }
 
         mInstabug.invoke(mode);
