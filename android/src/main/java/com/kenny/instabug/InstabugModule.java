@@ -50,9 +50,6 @@ public class InstabugModule extends ReactContextBaseJavaModule {
     public void changeInvocationEvent(String eventTag) {
         try {
             switch (eventTag) {
-                case "None":
-                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventNone);
-                    break;
                 case "TwoFingersSwipeLeft":
                     mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventTwoFingersSwipeLeft);
                     break;
@@ -64,6 +61,10 @@ public class InstabugModule extends ReactContextBaseJavaModule {
                     break;
                 case "ScreenshotGesture":
                     mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationScreenshotGesture);
+                    break;
+                case "None":
+                default:
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventNone);
                     break;
             }
 
@@ -98,6 +99,7 @@ public class InstabugModule extends ReactContextBaseJavaModule {
                     mInstabug.changeLocale(Locale.UK);
                     break;
                 case "US":
+                default:
                     mInstabug.changeLocale(Locale.US);
                     break;
             }
@@ -110,13 +112,17 @@ public class InstabugModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void report(String value) {
-        IBGInvocationMode mode = IBGInvocationMode.IBGInvocationModeNA;
-        if (value.equals("bug")) {
-            mode = IBGInvocationMode.IBGInvocationModeBugReporter;
-        } else if (value.equals("feedback")) {
-            mode = IBGInvocationMode.IBGInvocationModeFeedbackSender;
-        } else {
-            mode = null;
+        IBGInvocationMode mode;
+        switch (value) {
+            case "bug":
+                mode = IBGInvocationMode.IBGInvocationModeBugReporter;
+                break;
+            case "feedback":
+                mode = IBGInvocationMode.IBGInvocationModeFeedbackSender;
+                break;
+            default:
+                mode = IBGInvocationMode.IBGInvocationModeNA;
+                break;
         }
 
         mInstabug.invoke(mode);
