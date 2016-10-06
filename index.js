@@ -21,6 +21,10 @@ module.exports = {
     Instabug.report('bug');
   },
 
+  invoke: function () {
+    Instabug.report('');
+  },
+
   showIntroMessage: function () {
     Instabug.showIntroMessage();
   },
