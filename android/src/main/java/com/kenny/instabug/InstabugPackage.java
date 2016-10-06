@@ -8,7 +8,6 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.instabug.library.IBGColorTheme;
-import com.instabug.library.IBGInvocationEvent;
 import com.instabug.library.Instabug;
 
 import java.util.ArrayList;
@@ -20,15 +19,6 @@ public class InstabugPackage implements ReactPackage {
     private Application mApplication;
 
     private Instabug mInstagbug;
-    private Instabug.Builder mBuilder;
-
-    public InstabugPackage(Instabug instabug) {
-        this.mInstagbug = instabug;
-    }
-
-    public InstabugPackage(Instabug.Builder builder) {
-        this.mBuilder = builder;
-    }
 
     public InstabugPackage(String token, Application application) {
         this.mToken = token;
@@ -38,19 +28,14 @@ public class InstabugPackage implements ReactPackage {
                 .setDebugEnabled(true)
                 .setEmailFieldRequired(false)
                 .setFloatingButtonOffsetFromTop(400)
-                .setColorTheme(IBGColorTheme.IBGColorThemeLight)
+                .setColorTheme(IBGColorTheme.IBGColorThemeDark)
                 .setShouldShowIntroDialog(false)
-                .setInvocationEvent(IBGInvocationEvent.IBGInvocationEventShake)
-                //.setDefaultInvocationMode(IBGInvocationMode.IBGInvocationModeBugReporter)
                 .build();
-
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<NativeModule>();
-        //modules.add(new InstabugModule(reactContext, this.mToken, this.mApplication));
-        //modules.add(new InstabugModule(reactContext, this.mBuilder));
         modules.add(new InstabugModule(reactContext, this.mInstagbug));
         return modules;
     }

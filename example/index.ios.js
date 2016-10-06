@@ -12,7 +12,7 @@ import {
 	View,
 	TouchableOpacity,
 } from 'react-native';
-import Instabug from 'react-native-instabug';
+//import Instabug from 'react-native-instabug';
 
 class MyProject extends Component {
 	render() {
@@ -22,10 +22,9 @@ class MyProject extends Component {
 					Welcome to React Native!
 				</Text>
 				<Text style={styles.instructions}>
-					To get started, edit index.android.js
+					To get started, edit index.ios.js
 				</Text>
 				<Text style={styles.instructions}>
-					Double tap R on your keyboard to reload,{'\n'}
 					Shake or press menu button for dev menu
 				</Text>
 				<TouchableOpacity onPress={() => this._testShowIntroMessage()}>
@@ -39,17 +38,16 @@ class MyProject extends Component {
 	}
 
 	_testShowIntroMessage() {
-		Instabug.showIntroMessage();
+		//Instabug.showIntroMessage();
 	}
 
 	_testInstabug() {
-		Instabug.setUserEmail('your@gmail.com');
-		Instabug.setUserData('This is your committed user data');
-		Instabug.setUsername('Your user name');
-		Instabug.addTags('react-native,bug,feedback,instabug');
-		Instabug.changeLocale('CHINESE');
-		Instabug.changeInvocationEvent('Shake');
-		Instabug.reportBug();
+		//Instabug.setUserEmail('your@gmail.com');
+		//Instabug.setUserData('This is your committed user data');
+		//Instabug.setUsername('Your user name');
+		//Instabug.addTags('react-native,bug,feedback,instabug');
+		//Instabug.changeLocale('CHINESE');
+		//Instabug.reportBug();
 	}
 }
 

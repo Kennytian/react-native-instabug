@@ -5,39 +5,94 @@ import {NativeModules} from 'react-native';
 let {Instabug} = NativeModules;
 
 module.exports = {
-  //shakingThresholdAndroid: function (value) {
-  //  Instabug.shakingThresholdAndroid(value);
-  //},
+	reportFeedback: function () {
+		Instabug.report('feedback');
+	},
 
-  //colorTheme: function (value) {
-  //  Instabug.colorTheme(value);
-  //},
+	reportBug: function () {
+		Instabug.report('bug');
+	},
 
-  reportFeedback: function () {
-    Instabug.report('feedback');
-  },
-
-  reportBug: function () {
-    Instabug.report('bug');
-  },
-
+  /**
+   * Show Instabug dialog so user can choose to report a bug, or submit feedback
+   */
   invoke: function () {
     Instabug.report('');
   },
 
-  showIntroMessage: function () {
-    Instabug.showIntroMessage();
-  },
+	/**
+	 * Adds tag(s) to issues before sending them
+	 * @param tags  NOTICE: multiple tags with comma(,) split
+	 */
+	addTags: function (tags) {
+		Instabug.addTags(tags);
+	},
 
-  setUserEmail: function (userEmail) {
-    Instabug.setUserEmail(userEmail);
-  },
+	/**
+	 * None -> IBGInvocationEventNone
+	 * TwoFingersSwipeLeft -> IBGInvocationEventTwoFingersSwipeLeft
+	 * FloatingButton -> IBGInvocationEventFloatingButton
+	 * Shake -> IBGInvocationEventShake
+	 * ScreenshotGesture -> IBGInvocationScreenshotGesture
+	 *
+	 Changes the event used to invoke Instabug SDK
+	 * @param eventTag
+	 */
+	changeInvocationEvent: function (eventTag) {
+		Instabug.changeInvocationEvent(eventTag);
+	},
 
-  setUsername: function (username) {
-    Instabug.setUsername(username);
-  },
+	/**
+	 [CHINA/CHINESE/PRC/SIMPLIFIED_CHINESE -> CHINESE]
+	 [TAIWAN/TRADITIONAL_CHINESE -> TAIWAN]
+	 [ENGLISH -> ENGLISH]
+	 [UK -> UK]
+	 [US -> US]
+	 * @param languageTag
+	 */
+	changeLocale: function (languageTag) {
+		Instabug.changeLocale(languageTag);
+	},
 
-  setUserData: function (userData) {
-    Instabug.setUserData(userData);
-  },
+	/**
+	 * The file at filePath will be uploaded along upcoming reports with the name fileNameWithExtension
+	 * @param fileUri
+	 * @param fileNameWithExtension
+	 */
+	setFileAttachment: function (fileUri, fileNameWithExtension) {
+		Instabug.setFileAttachment(fileUri, fileNameWithExtension);
+	},
+
+	/**
+	 * If your app already acquires the user's email address and you provide it to this method,
+	 * Instabug will pre-fill the user email in reports.
+	 * @param userEmail
+	 */
+	setUserEmail: function (userEmail) {
+		Instabug.setUserEmail(userEmail);
+	},
+
+	/**
+	 * Sets the user name that is used in the dashboard's contacts.
+	 * @param username
+	 */
+	setUsername: function (username) {
+		Instabug.setUsername(username);
+	},
+
+	/**
+	 * Adds specific user data that you need to be added to the reports
+	 * @param userData
+	 */
+	setUserData: function (userData) {
+		Instabug.setUserData(userData);
+	},
+
+	/**
+	 * Call this method to display the discovery dialog explaining the shake gesture or the two finger swipe gesture,
+	 * if you've enabled it   i.e: This method is automatically called on first run of the application
+	 */
+	showIntroMessage: function () {
+		Instabug.showIntroMessage();
+	},
 };

@@ -1,0 +1,34 @@
+language: node_js
+
+sudo: true
+
+node_js:
+  - "6.2.0"
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm install -g react-native-cli
+  #- rm -rf InstagbugDemo
+
+notifications:
+  email: false
+
+script:
+  - react-native init InstagbugDemo
+  - cd InstagbugDemo
+  - npm install react-native-instabug --save
+  # - react-native link
+
+after_script:
+  - npm uninstall react-native-instabug --save

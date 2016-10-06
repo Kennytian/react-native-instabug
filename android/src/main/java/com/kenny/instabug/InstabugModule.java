@@ -1,23 +1,19 @@
 package com.kenny.instabug;
 
+import android.net.Uri;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
-import android.app.Application;
-import android.text.TextUtils;
-import android.util.Log;
-
 import com.facebook.react.bridge.ReactMethod;
-import com.instabug.library.Feature;
-import com.instabug.library.IBGColorTheme;
 import com.instabug.library.IBGInvocationEvent;
 import com.instabug.library.IBGInvocationMode;
 import com.instabug.library.Instabug;
 
-public class InstabugModule extends ReactContextBaseJavaModule {
-    // Reference to builder
-    private Instabug.Builder mBuilder;
+import java.util.Locale;
 
+
+public class InstabugModule extends ReactContextBaseJavaModule {
     private Instabug mInstabug;
 
     public InstabugModule(ReactApplicationContext reactContext, Instabug instabug) {
@@ -29,19 +25,87 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         return "Instabug";
     }
 
-    /*@ReactMethod
-    public void colorTheme(String value) {
-        switch (value) {
-            case "dark":
-                this.mBuilder.setColorTheme(IBGColorTheme.IBGColorThemeDark);
-                break;
-            case "light":
-                this.mBuilder.setColorTheme(IBGColorTheme.IBGColorThemeLight);
-                break;
-            default:
-                break;
+    /**
+     * Adds tag(s) to issues before sending them
+     *
+     * @param tags
+     */
+    @ReactMethod
+    public void addTags(String tags) {
+        try {
+            String[] result = tags.split(",");
+            mInstabug.resetTags(); //clear last commit tags
+            mInstabug.addTags(result);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }*/
+    }
+
+    /**
+     * Changes the event used to invoke Instabug SDK
+     *
+     * @param eventTag
+     */
+    @ReactMethod
+    public void changeInvocationEvent(String eventTag) {
+        try {
+            switch (eventTag) {
+                case "None":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventNone);
+                    break;
+                case "TwoFingersSwipeLeft":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventTwoFingersSwipeLeft);
+                    break;
+                case "FloatingButton":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventFloatingButton);
+                    break;
+                case "Shake":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationEventShake);
+                    break;
+                case "ScreenshotGesture":
+                    mInstabug.changeInvocationEvent(IBGInvocationEvent.IBGInvocationScreenshotGesture);
+                    break;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Change Locale of Instabug UI elements(defaults to English)
+     *
+     * @param languageTag
+     */
+    @ReactMethod
+    public void changeLocale(String languageTag) {
+        try {
+            switch (languageTag) {
+                case "CHINA":
+                case "CHINESE":
+                case "PRC":
+                case "SIMPLIFIED_CHINESE":
+                    mInstabug.changeLocale(Locale.CHINESE);
+                    break;
+                case "TAIWAN":
+                case "TRADITIONAL_CHINESE":
+                    mInstabug.changeLocale(Locale.TAIWAN);
+                    break;
+                case "ENGLISH":
+                    mInstabug.changeLocale(Locale.ENGLISH);
+                    break;
+                case "UK":
+                    mInstabug.changeLocale(Locale.UK);
+                    break;
+                case "US":
+                    mInstabug.changeLocale(Locale.US);
+                    break;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @ReactMethod
@@ -58,15 +122,28 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         mInstabug.invoke(mode);
     }
 
+    /**
+     * The file at filePath will be uploaded along upcoming reports with the name fileNameWithExtension
+     *
+     * @param fileUri
+     * @param fileNameWithExtension
+     */
     @ReactMethod
-    public void showIntroMessage() {
+    public void setFileAttachment(String fileUri, String fileNameWithExtension) {
         try {
-            mInstabug.showIntroMessage();
+            Uri uri = Uri.parse(fileUri);
+            mInstabug.setFileAttachment(uri, fileNameWithExtension);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * If your app already acquires the user's email address and you provide it to this method,
+     * Instabug will pre-fill the user email in reports.
+     *
+     * @param userEmail
+     */
     @ReactMethod
     public void setUserEmail(String userEmail) {
         try {
@@ -76,6 +153,11 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         }
     }
 
+    /**
+     * Sets the user name that is used in the dashboard's contacts.
+     *
+     * @param username
+     */
     @ReactMethod
     public void setUsername(String username) {
         try {
@@ -85,6 +167,11 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         }
     }
 
+    /**
+     * Adds specific user data that you need to be added to the reports
+     *
+     * @param userData
+     */
     @ReactMethod
     public void setUserData(String userData) {
         try {
@@ -94,35 +181,17 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         }
     }
 
-    // default value is true
-    /*@ReactMethod
-    public void commentRequired(boolean value) {
-        this.mBuilder.setCommentFieldRequired(value);
-    }*/
-
-    /*@ReactMethod
-    public void shakingThresholdAndroid(String value) {
-        if (!TextUtils.isEmpty(value)) {
-            try {
-                this.mBuilder.setShakingThreshold(Float.parseFloat(value + "f"));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }*/
-
-    /*@ReactMethod
-    public void enableIntroDialog(boolean value) {
+    /**
+     * Call this method to display the discovery dialog explaining the shake gesture or the two
+     * finger swipe gesture, if you've enabled it.
+     * i.e: This method is automatically called on first run of the application
+     */
+    @ReactMethod
+    public void showIntroMessage() {
         try {
-            this.mBuilder.setShouldShowIntroDialog(value);
+            mInstabug.showIntroMessage();
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
-
-    // default value is true
-    /*@ReactMethod
-    public void setAddLogToReports(boolean value) {
-        this.mBuilder.setInstabugLogState(value ? Feature.State.ENABLED : Feature.State.DISABLED);
-    }*/
+    }
 }

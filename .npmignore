@@ -9,7 +9,11 @@ android/gradlew.bat
 android/local.properties
 
 ios/.DS_Store
+ios/RCTInstabug.xcodeproj/project.xcworkspace/
+ios/RCTInstabug.xcodeproj/xcuserdata/
 
+.travis
+.travis.yml
 
 build/
 

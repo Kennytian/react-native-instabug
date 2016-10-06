@@ -1,7 +1,7 @@
 {
   "name": "react-native-instabug",
-  "version": "0.1.0",
-  "description": "This is a user feedback component",
+  "version": "0.2.7",
+  "description": "React Native plugin for integrating the Instabug SDK",
   "main": "index.js",
   "scripts": {
     "test": "make test"
@@ -14,12 +14,44 @@
     "react-native",
     "bug",
     "feedback",
-    "instabug"
+    "reporting",
+    "instabug",
+    "sdk"
   ],
-  "author": "Kenny Tian",
+  "author": {
+    "name": "Kenny Tian",
+    "url": "https://github.com/Kennytian",
+    "email": "kenny_tian@outlook.com"
+  },
+  "contributors": [
+    {
+      "name": "张艳",
+      "url": "https://github.com/emmaplus",
+      "email": "zy_sunday@163.com"
+    },
+    {
+      "name": "Prithvi Sharma",
+      "url": "https://github.com/prithsharma"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Kennytian/react-native-instabug/issues"
   },
-  "homepage": "https://github.com/Kennytian/react-native-instabug#readme"
+  "homepage": "https://github.com/Kennytian/react-native-instabug#readme",
+  "rnpm": {
+    "android": {
+      "packageInstance": "new InstabugPackage(${androidApplicationToken}, MainApplication.this)"
+    },
+    "params": [
+      {
+        "type": "input",
+        "name": "androidApplicationToken",
+        "message": "What is your Instabug application token for Android (hit <ENTER> to ignore)"
+      }
+    ],
+    "commands": {
+      "postlink": "node node_modules/react-native-instabug/scripts/postlink/run"
+    }
+  }
 }
