@@ -5,12 +5,17 @@ import {NativeModules} from 'react-native';
 let {Instabug} = NativeModules;
 
 module.exports = {
-  reportFeedback: function () {
-    Instabug.report('feedback');
+
+  //can not work
+  startWithToken: function (token) {
+    Instabug.startWithToken(token);
   },
 
-  reportBug: function () {
-    Instabug.report('bug');
+  /**
+   * Dismisses any Instabug views that are currently being shown.
+   */
+  dismiss: function () {
+    Instabug.dismiss();
   },
 
   /**
@@ -18,6 +23,14 @@ module.exports = {
    */
   invoke: function () {
     Instabug.report('');
+  },
+
+  reportFeedback: function () {
+    Instabug.report('feedback');
+  },
+
+  reportBug: function () {
+    Instabug.report('bug');
   },
 
   /**

@@ -25,6 +25,16 @@ public class InstabugModule extends ReactContextBaseJavaModule {
         return "Instabug";
     }
 
+    //can not work
+    @ReactMethod
+    public void startWithToken(String token) {
+        try {
+            //TODO
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Adds tag(s) to issues before sending them
      *
@@ -36,6 +46,18 @@ public class InstabugModule extends ReactContextBaseJavaModule {
             String[] result = tags.split(",");
             mInstabug.resetTags(); //clear last commit tags
             mInstabug.addTags(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Dismisses any Instabug views that are currently being shown.
+     */
+    @ReactMethod
+    public void dismiss() {
+        try {
+            mInstabug.dismiss();
         } catch (Exception e) {
             e.printStackTrace();
         }
