@@ -47,5 +47,21 @@ static NSDictionary *DynamicDimensions(){
     return @{@"width":@(width),@"height":@(height),@"scale":@(scale)};
 }
 
+- (instancetype) init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    }
+    return self;
+}
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (NSDictionary *)constansToExport
+{
+    return @{@"EVENT_ORIENTATION":@"orientationDidChange"};
+}
 
 @end
