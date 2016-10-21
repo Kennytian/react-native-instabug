@@ -1,6 +1,6 @@
 {
   "name": "react-native-instabug",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "React Native plugin for integrating the Instabug SDK",
   "main": "index.js",
   "scripts": {
