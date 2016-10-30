@@ -16,4 +16,4 @@ ios/RCTInstabug.xcodeproj/xcuserdata/
 .travis.yml
 
 build/
-
+node_modules/

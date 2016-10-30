@@ -6,3 +6,4 @@ android/.DS_Store
 ios/.DS_Store
 
 build/
+node_modules/
