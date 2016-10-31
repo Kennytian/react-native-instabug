@@ -4,19 +4,14 @@ sudo: true
 
 node_js:
   - "6.9.1"
+
 env:
   - CXX=g++-4.8
-  global:
-    - PROJECT_MOBILE=InstagbugDemo
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
+
 before_cache:
-  - rm -rf android/.gradle/caches
-  - rm -rf node_modules
+- rm -rf android/.gradle/caches
+- rm -rf node_modules
+
 cache:
   directories:
     - node_modules
@@ -29,6 +24,10 @@ before_install:
 
 notifications:
   email: false
+
+branches:
+  only:
+  - develop
 
 script:
   - react-native init InstagbugDemo
