@@ -14,7 +14,9 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-
+before_cache:
+- rm -rf android/.gradle/caches
+- rm -rf node_modules
 cache:
   directories:
     - node_modules
