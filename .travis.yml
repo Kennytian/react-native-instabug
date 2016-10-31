@@ -3,9 +3,11 @@ language: node_js
 sudo: true
 
 node_js:
-  - "6.2.0"
+  - "6.9.1"
 env:
   - CXX=g++-4.8
+  global:
+    - PROJECT_MOBILE=InstagbugDemo
 addons:
   apt:
     sources:
@@ -16,6 +18,8 @@ addons:
 cache:
   directories:
     - node_modules
+    - android/.gradle/caches
+    - android/.gradle/wrapper
 
 before_install:
   - npm install -g react-native-cli

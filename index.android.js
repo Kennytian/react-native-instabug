@@ -1,8 +1,8 @@
 'use strict';
 
-import {NativeModules} from 'react-native';
+import { NativeModules } from 'react-native';
 
-let {Instabug} = NativeModules;
+let { Instabug } = NativeModules;
 
 module.exports = {
 

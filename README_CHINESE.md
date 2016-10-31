@@ -1,4 +1,4 @@
-##React Native plugin for the Instabug service
+## 摇一摇报Bug（Instabug）之 React Native 版
 
 README: [English](https://github.com/Kennytian/react-native-instabug/) | [中文](https://github.com/Kennytian/react-native-instabug/blob/master/README_CHINESE.md)
 
@@ -14,17 +14,17 @@ README: [English](https://github.com/Kennytian/react-native-instabug/) | [中文
 
 ![Android Demo](http://ww4.sinaimg.cn/mw690/77c29b23gw1f8hrrg0ie1j20hu0qk404.jpg)
 
-### Getting Started
+### 安装 NPM 包
 
 `npm install --save react-native-instabug`
 
-### Mostly automatic installation
+### 自动安装（多数情况下能成功安装并集成到项目中）
 
 `react-native link react-native-instabug`
 
-### Manual installation
+### 手动安装
 #### Android
-Edit android/settings.gradle to look like this:
+编辑 android/settings.gradle，加这两行:
 
 ```diff
 include ':app'
@@ -33,7 +33,7 @@ include ':app'
 + project(':react-native-instabug').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-instabug/android')
 ```
 
-Edit android/app/build.gradle to look like this:
+编辑 android/app/build.gradle，加这一行:
 ```diff
 dependencies {
   compile fileTree(dir: "libs", include: ["*.jar"])
@@ -43,7 +43,7 @@ dependencies {
 }
 ```
 
-only RN 0.29+ Edit your MainApplication.java (deep in android/app/src/main/java/...) to look like this (note two places to edit):
+编辑 MainApplication.java (在 android/app/src/main/java/...目录里) ，像这样，一共有两处(只支持 RN 0.29 以上版本，抱歉):
 ```diff
 + import com.kenny.instabug.InstabugPackage;
 ...
@@ -54,17 +54,17 @@ only RN 0.29+ Edit your MainApplication.java (deep in android/app/src/main/java/
 
 #### iOS
 ```diff
-- Welcome iOS developer join, write this component together!
+- 欢迎懂 iOS 的开发者加入, 和我们一起完成这个控件!
 ```
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-instabug` and add `ios/RCTInstabug.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRCTInstabug.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+1. 打开 XCode, 切换至 project navigator, 右键点击 `Libraries` ➜ `Add Files to [your project's name]`
+2. 进入 `node_modules` ➜ `react-native-instabug` 并且添加 `ios/RCTInstabug.xcodeproj`
+3. 接着在 XCode 切换至 project navigator, 选择你的项目。 添加 `libRCTInstabug.a` 到你的项目中 ➜ `Build Phases` ➜ `Link Binary With Libraries`
+4. 运行项目 (`cmd+R`)
 
-### Usage
+### 调用方式
 
-To see all available function take a look at [index.android.js](https://github.com/Kennytian/react-native-instabug/blob/master/example/index.android.js#L41)
+Android 端可以有大量 function 可以使用了，请戳这儿 [index.android.js](https://github.com/Kennytian/react-native-instabug/blob/master/example/index.android.js#L41)，欢迎提 PR 和 issue。
 
 ```js
 _testShowIntroMessage() {
@@ -80,7 +80,8 @@ _testInstabug() {
   Instabug.reportBug();
 }
 ```
-### Credits
+
+### 致谢
 * @prithsharma https://github.com/prithsharma
 * @emmaplus https://github.com/emmaplus
 * @delfrrr https://github.com/delfrrr

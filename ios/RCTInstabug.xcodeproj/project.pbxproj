@@ -9,16 +9,12 @@
 /* Begin PBXBuildFile section */
 		B5EA19F31DA156B9009F9814 /* RCTInstabug.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EA19F21DA156B9009F9814 /* RCTInstabug.h */; };
 		B5EA19F51DA156B9009F9814 /* RCTInstabug.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA19F41DA156B9009F9814 /* RCTInstabug.m */; };
-		B94944511DAF66AA00C1DA9A /* DeviceExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B949444E1DAF647800C1DA9A /* DeviceExtension.h */; };
-		B94944541DAF77A100C1DA9A /* DeviceExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B94944531DAF77A100C1DA9A /* DeviceExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B5EA19EF1DA156B9009F9814 /* libRCTInstabug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTInstabug.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EA19F21DA156B9009F9814 /* RCTInstabug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTInstabug.h; sourceTree = "<group>"; };
 		B5EA19F41DA156B9009F9814 /* RCTInstabug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTInstabug.m; sourceTree = "<group>"; };
-		B949444E1DAF647800C1DA9A /* DeviceExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceExtension.h; sourceTree = "<group>"; };
-		B94944531DAF77A100C1DA9A /* DeviceExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceExtension.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +49,6 @@
 			children = (
 				B5EA19F21DA156B9009F9814 /* RCTInstabug.h */,
 				B5EA19F41DA156B9009F9814 /* RCTInstabug.m */,
-				B949444E1DAF647800C1DA9A /* DeviceExtension.h */,
-				B94944531DAF77A100C1DA9A /* DeviceExtension.m */,
 			);
 			path = RCTInstabug;
 			sourceTree = "<group>";
@@ -66,7 +60,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B94944511DAF66AA00C1DA9A /* DeviceExtension.h in Headers */,
 				B5EA19F31DA156B9009F9814 /* RCTInstabug.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,7 +120,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B94944541DAF77A100C1DA9A /* DeviceExtension.m in Sources */,
 				B5EA19F51DA156B9009F9814 /* RCTInstabug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
