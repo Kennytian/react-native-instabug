@@ -2,7 +2,7 @@
 
 README: [English](https://github.com/Kennytian/react-native-instabug/) | [中文](https://github.com/Kennytian/react-native-instabug/blob/master/README_CHINESE.md)
 
-[![Build Status](https://travis-ci.org/Kennytian/react-native-instabug.svg?branch=master)](https://travis-ci.org/Kennytian/react-native-instabug?branch=develop)
+[![Build Status](https://travis-ci.org/Kennytian/react-native-instabug.svg?branch=develop)](https://travis-ci.org/Kennytian/react-native-instabug.svg?branch=develop)
 [![npm version](http://img.shields.io/npm/v/react-native-instabug.svg?style=flat-square)](https://npmjs.org/package/react-native-instabug "View this project on npm")
 [![npm version](http://img.shields.io/npm/dm/react-native-instabug.svg?style=flat-square)](https://npmjs.org/package/react-native-instabug "View this project on npm")
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
