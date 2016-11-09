@@ -7,7 +7,7 @@ README: [English](https://github.com/Kennytian/react-native-instabug/) | [中文
 [![npm version](http://img.shields.io/npm/dm/react-native-instabug.svg?style=flat-square)](https://npmjs.org/package/react-native-instabug "View this project on npm")
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 [![Github Issues](http://githubbadges.herokuapp.com/pikesley/githubbadges/issues.svg)](https://github.com/Kennytian/react-native-instabug/issues)
-[![Pending Pull-Requests](http://githubbadges.herokuapp.com/pikesley/githubbadges/pulls.svg)](https://github.com/Kennytian/react-native-instabug/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Kennytian/react-native-instabug/pulls)
 
 
 [The Simplest In-App Feedback and Bug Reportng for Mobile Apps! ](https://instabug.com/developers)
