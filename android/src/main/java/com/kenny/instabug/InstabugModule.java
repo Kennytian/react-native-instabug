@@ -117,6 +117,12 @@ public class InstabugModule extends ReactContextBaseJavaModule {
                 case "ENGLISH":
                     mInstabug.changeLocale(Locale.ENGLISH);
                     break;
+                case "ITALIAN":
+                    mInstabug.changeLocale(Locale.ITALIAN);
+                    break;
+                case "RUSSIAN":
+                    mInstabug.changeLocale(new Locale("ru", "RU"));
+                    break;
                 case "UK":
                     mInstabug.changeLocale(Locale.UK);
                     break;
