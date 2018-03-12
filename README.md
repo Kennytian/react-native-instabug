@@ -1,4 +1,4 @@
-##React Native plugin for the Instabug service
+## React Native plugin for the Instabug service
 
 README: [English](https://github.com/Kennytian/react-native-instabug/) | [中文](https://github.com/Kennytian/react-native-instabug/blob/master/README_CHINESE.md)
 
